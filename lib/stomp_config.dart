@@ -93,7 +93,7 @@ class StompConfig {
 
   StompConfig.sockJS({
     required String url,
-    required String? memberId,
+    required String memberId,
     this.reconnectDelay = const Duration(seconds: 5),
     this.heartbeatIncoming = const Duration(seconds: 5),
     this.heartbeatOutgoing = const Duration(seconds: 5),
@@ -117,6 +117,7 @@ class StompConfig {
   // ignore: non_constant_identifier_names
   StompConfig.SockJS({
     required String url,
+    required String memberId,
     this.reconnectDelay = const Duration(seconds: 5),
     this.heartbeatIncoming = const Duration(seconds: 5),
     this.heartbeatOutgoing = const Duration(seconds: 5),
@@ -134,7 +135,7 @@ class StompConfig {
     this.onWebSocketDone = _noOp,
     this.onDebugMessage = _noOp,
   })  : useSockJS = true,
-        url = SockJsUtils().generateTransportUrl(url);
+        url = SockJsUtils().generateTransportUrl(url, memberId);
 
   StompConfig copyWith({
     String? url,
