@@ -35,7 +35,7 @@ class SockJsUtils {
     } else {
       throw ArgumentError('The url has to start with http/https');
     }
-    transportUrl = '${transportUrl}/?memberId=$memberId}';
+    transportUrl = '$transportUrl/?memberId=$memberId';
     return transportUrl;
   }
 
