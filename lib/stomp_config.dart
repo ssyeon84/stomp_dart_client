@@ -93,7 +93,7 @@ class StompConfig {
 
   StompConfig.sockJS({
     required String url,
-    String? memberId,
+    required String? memberId,
     this.reconnectDelay = const Duration(seconds: 5),
     this.heartbeatIncoming = const Duration(seconds: 5),
     this.heartbeatOutgoing = const Duration(seconds: 5),
