@@ -9,7 +9,7 @@ class SockJsUtils {
 
   final Random _random = Random();
 
-  String generateTransportUrl(String url, String memberId) {
+  String generateTransportUrl(String url, String? memberId) {
     var uri = Uri.parse(url);
 
     var pathSegments = <String>[];
@@ -35,7 +35,9 @@ class SockJsUtils {
     } else {
       throw ArgumentError('The url has to start with http/https');
     }
-    transportUrl = '${transportUrl}/?memberId=$memberId}'
+    if(memberId != null) {
+      transportUrl = '${transportUrl}/?memberId=$memberId}'
+    }
     return transportUrl;
   }
 
